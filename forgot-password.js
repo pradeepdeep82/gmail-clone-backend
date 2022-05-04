@@ -28,8 +28,8 @@ router.post("/login/forgot-password", async (req, res) => {
         id: userFromDB[0]._id
       };
       const token = jwt.sign(payload, secret, { expiresIn: '15m' });
-      const link = `http://localhost:3000/reset-password/${userFromDB[0].username}/${token}`;
-
+      // const link = `http://localhost:3000/reset-password/${userFromDB[0].username}/${token}`;
+      const link = `https://gmail-clone-pradeep.netlify.app/reset-password/${userFromDB[0].username}/${token}`;
     var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({
